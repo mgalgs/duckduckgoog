@@ -1,3 +1,5 @@
+document.body.style.border = "5px solid red";
+
 const pullRipcord = () => {
     const ipt = document.getElementById("search_form_input");
     ipt.value += ' g!';
