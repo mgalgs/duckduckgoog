@@ -6,10 +6,13 @@ const pullRipcord = () => {
     ipt.form.submit();
 };
 
-browser.commands.onCommand.addListener((command) => {
-    console.log("Got command:", command);
-    if (command === "pull-ripcord")
+browser.runtime.onMessage.addListener(request => {
+    switch (request.command) {
+    case "pull-ripcord":
         pullRipcord();
+        break;
+    default:
+        console.log("Bad request:", request);
+        break;
+    }
 });
-
-console.log("HELLO DUCKDUCKGOOG");
