@@ -1,5 +1,5 @@
 const pullRipcord = () => {
-    const ipt = document.getElementById("search_form_input");
+    const ipt = document.getElementById("search_form_input") || document.getElementById("searchbox");
     ipt.value += ' g!';
     ipt.form.submit();
 };
